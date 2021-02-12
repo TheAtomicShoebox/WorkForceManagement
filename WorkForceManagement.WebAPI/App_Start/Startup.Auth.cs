@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using WorkForceManagement.WebAPI.Providers;
 using WorkForceManagement.WebAPI.Models;
+using WorkForceManagement.Data;
 
 namespace WorkForceManagement.WebAPI
 {
