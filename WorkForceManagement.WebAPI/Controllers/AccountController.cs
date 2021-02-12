@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using WorkForceManagement.Data;
 using WorkForceManagement.WebAPI.Models;
 using WorkForceManagement.WebAPI.Providers;
 using WorkForceManagement.WebAPI.Results;
