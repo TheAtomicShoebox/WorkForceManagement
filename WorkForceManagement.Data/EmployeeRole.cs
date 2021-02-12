@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorkForceManagement.Data
 {
-    class Roles
+    class EmployeeRole
     {
     }
 }
