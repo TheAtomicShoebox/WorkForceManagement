@@ -36,7 +36,7 @@ namespace WorkForceManagement.WebAPI.Models
 
         //public DbSet<StoreLocation> StoreLocations { get; set; }
 
-        //public DbSet<EmployeeRole> EmployeeRoles { get; set; }
+        public DbSet<EmployeeRole> EmployeeRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
