@@ -57,22 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
+    <Compile Include="StoreService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WorkForceManagement.Data\WorkForceManagement.Data.csproj">
-      <Project>{1E55B89A-3A98-431B-8A11-9B6A59F1F6EF}</Project>
-      <Name>WorkForceManagement.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WorkForceManagement.Models\WorkForceManagement.Models.csproj">
-      <Project>{49058FB2-DA26-41AA-BE14-21DC54BAE8AD}</Project>
-      <Name>WorkForceManagement.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
