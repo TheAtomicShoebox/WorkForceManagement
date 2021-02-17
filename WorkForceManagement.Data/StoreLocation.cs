@@ -4,9 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace WorkForceManagement.Data
 {
     public class StoreLocation
-
     {
-
         [Key]
         public int StoreNumber { get; set; }
         [Required]

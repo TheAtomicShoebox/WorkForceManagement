@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeModels\EmployeeCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreModels\StoreCreate.cs" />
     <Compile Include="StoreModels\StoreDetail.cs" />
@@ -62,7 +63,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WorkForceManagement.Data\WorkForceManagement.Data.csproj">
+      <Project>{1e55b89a-3a98-431b-8a11-9b6a59f1f6ef}</Project>
+      <Name>WorkForceManagement.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
