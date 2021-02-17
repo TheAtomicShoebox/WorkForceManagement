@@ -17,8 +17,20 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         // GET api/Employee
+        public async Task<IHttpActionResult> Get()
+        {
+            EmployeeService employeeService = CreateEmployeeService();
+            var employees = await employeeService.GetEmployees();
+            return Ok(employees);
+        }
 
         // GET by id api/Employee/:employeeId
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            EmployeeService employeeService = CreateEmployeeService();
+            var employee = await employeeService.GetEmployeeById(id);
+            return Ok(employee);
+        }
 
         // POST api/Employee
         public async Task<IHttpActionResult> Post(EmployeeCreate model)
