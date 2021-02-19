@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.ApplicationServices;
 using System.Web.Http;
+using RoleService = WorkForceManagement.Services.RoleService;
 
 namespace WorkForceManagement.WebAPI.Controllers
 {
@@ -19,9 +20,9 @@ namespace WorkForceManagement.WebAPI.Controllers
             return roleService;
         }
 
-        public IHttpActionResult Get()
+        /*public IHttpActionResult Get()
         {
             RoleService roleService = CreateRoleService();
-        }
+        }*/
     }
 }
