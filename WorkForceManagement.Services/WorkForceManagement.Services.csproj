@@ -55,6 +55,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WorkForceManagement.Models">
+      <HintPath>..\WorkForceManagement.Models\bin\Debug\WorkForceManagement.Models.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeService.cs" />

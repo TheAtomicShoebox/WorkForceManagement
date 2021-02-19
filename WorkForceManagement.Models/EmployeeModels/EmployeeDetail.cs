@@ -10,5 +10,7 @@
 
         public int StoreLocationId { get; set; }
         public string StoreName { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }
