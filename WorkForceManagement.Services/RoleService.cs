@@ -40,9 +40,17 @@ namespace WorkForceManagement.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
-                    .Roles
-                    .Where(e => e.RoleId)
-                        
+                    .EmployeeRoles
+                    .Select(
+                        e =>
+                            new RoleListItem
+                            {
+                                RoleId = e.RoleId,
+                                RoleName = e.RoleName,
+                            }
+                            );
+
+                return query.ToArray();
             }
         }
     }
