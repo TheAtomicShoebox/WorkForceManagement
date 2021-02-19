@@ -19,6 +19,8 @@ namespace WorkForceManagement.Data
             get { return $"{FirstName} {LastName}"; }
         }
 
+        public bool IsActive { get; set; } = true;
+
         [Required]
         [ForeignKey(nameof(Role))]
         public int RoleId { get; set; }
