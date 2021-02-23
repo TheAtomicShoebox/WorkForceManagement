@@ -45,5 +45,16 @@ namespace WorkForceManagement.WebAPI.Controllers
 
             return Ok();
         }
+
+        // PUT api/Employee/:employeeID
+        public async Task<IHttpActionResult> Terminate(int id)
+        {
+            EmployeeService employeeService = CreateEmployeeService();
+
+            if (await employeeService.TerminateEmployeeById(id))
+                return Ok();
+
+            return InternalServerError();
+        }
     }
 }

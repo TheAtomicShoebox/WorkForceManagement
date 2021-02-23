@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using WorkForceManagement.Data;
+using WorkForceManagement.Models;
 using WorkForceManagement.Models.StoreModels;
 using StoreLocation = WorkForceManagement.Data.StoreLocation;
 
@@ -74,6 +75,39 @@ namespace WorkForceManagement.Services
                         StreetAddress = entity.StreetAddress
                     };
 
+
+            }
+        }
+
+        public bool UpdateStore(StoreEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StoreLocations
+                        .Single(e => e.StoreNumber == model.StoreNumber);
+
+                entity.StoreName = model.StoreName;
+                entity.StreetAddress = model.StreetAddress;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+         
+        
+        public bool DeleteStore(int storeNumber)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StoreLocations
+                        .Single(e => e.StoreNumber == storeNumber);
+
+                ctx.StoreLocations.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
 
             }
         }
