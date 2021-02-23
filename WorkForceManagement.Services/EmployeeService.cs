@@ -78,5 +78,18 @@ namespace WorkForceManagement.Services
                 };
             }
         }
+
+        public async Task<bool> TerminateEmployeeById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = await
+                   ctx
+                       .Employees
+                       .SingleAsync(e => e.EmployeeId == id);
+                entity.IsActive = false;
+                return await ctx.SaveChangesAsync() == 1;
+            }
+        }
     }
 }
