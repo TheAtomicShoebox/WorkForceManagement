@@ -18,6 +18,7 @@ namespace WorkForceManagement.Models.EmployeeModels
         [Required]
         public int StoreLocationId { get; set; }
 
+        public double PayRate { get; set; }
         public bool IsActive { get; set; } = true;
     }
 }

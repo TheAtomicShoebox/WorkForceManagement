@@ -19,6 +19,8 @@ namespace WorkForceManagement.Data
             get { return $"{FirstName} {LastName}"; }
         }
 
+        public double PayRate { get; set; }
+
         public bool IsActive { get; set; } = true;
 
         [Required]
