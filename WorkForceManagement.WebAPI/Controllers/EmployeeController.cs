@@ -19,6 +19,7 @@ namespace WorkForceManagement.WebAPI.Controllers
 
         // GET api/Employee
         [HttpGet]
+        [Route("api/Employee/")]
         public async Task<IHttpActionResult> Get()
         {
             EmployeeService employeeService = CreateEmployeeService();
@@ -28,6 +29,7 @@ namespace WorkForceManagement.WebAPI.Controllers
 
         // GET by id api/Employee/:employeeId
         [HttpGet]
+        [Route("api/Employee/{id}")]
         public async Task<IHttpActionResult> Get(int id)
         {
             EmployeeService employeeService = CreateEmployeeService();
@@ -66,6 +68,7 @@ namespace WorkForceManagement.WebAPI.Controllers
 
         // PUT api/Employee/
         [HttpPut]
+        [Route("api/Employee")]
         public async Task<IHttpActionResult> Update(EmployeeDetail model)
         {
             if (!ModelState.IsValid)

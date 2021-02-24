@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.ApplicationServices;
 using System.Web.Http;
 using WorkForceManagement.Models.RoleModels;
 using RoleService = WorkForceManagement.Services.RoleService;
@@ -22,6 +17,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/Role/")]
         public IHttpActionResult Get()
         {
             RoleService roleService = CreateRoleService();
@@ -30,6 +26,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/Role/{id}")]
         public IHttpActionResult Get(int id)
         {
             RoleService roleService = CreateRoleService();
@@ -38,6 +35,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/Role/")]
         public IHttpActionResult Post(RoleCreate role)
         {
             if (!ModelState.IsValid)
@@ -52,6 +50,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpPut]
+        [Route("api/Role/")]
         public IHttpActionResult Put(RoleEdit role)
         {
             if (!ModelState.IsValid)
@@ -66,6 +65,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("api/Role/{id}")]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateRoleService();
