@@ -21,6 +21,7 @@ namespace WorkForceManagement.WebAPI.Controllers
             return roleService;
         }
 
+        [HttpGet]
         public IHttpActionResult Get()
         {
             RoleService roleService = CreateRoleService();
@@ -28,6 +29,7 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(roles);
         }
 
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             RoleService roleService = CreateRoleService();
@@ -35,6 +37,7 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(role);
         }
 
+        [HttpPost]
         public IHttpActionResult Post(RoleCreate role)
         {
             if (!ModelState.IsValid)
@@ -48,6 +51,7 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPut]
         public IHttpActionResult Put(RoleEdit role)
         {
             if (!ModelState.IsValid)
@@ -61,6 +65,7 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateRoleService();
