@@ -53,20 +53,18 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok();
         }
 
-        // PUT api/Employee/Terminate/:employeeId
-        [Route("api/Employee/Terminate/{id}")]
+        [Route("api/Employee/ChangeEmployeeStatus/{id}")]
         [HttpPut]
-        public async Task<IHttpActionResult> Terminate(int id)
+        public async Task<IHttpActionResult> ChangeEmployeeStatus(int id)
         {
             EmployeeService employeeService = CreateEmployeeService();
 
-            if (await employeeService.TerminateEmployeeById(id))
+            if (await employeeService.ChangeEmployeeStatusById(id))
                 return Ok();
 
             return InternalServerError();
         }
 
-        // PUT api/Employee/
         [HttpPut]
         [Route("api/Employee")]
         public async Task<IHttpActionResult> Update(EmployeeDetail model)

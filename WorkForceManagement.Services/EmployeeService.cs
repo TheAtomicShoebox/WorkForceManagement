@@ -105,7 +105,7 @@ namespace WorkForceManagement.Services
             }
         }
 
-        public async Task<bool> TerminateEmployeeById(int id)
+        public async Task<bool> ChangeEmployeeStatusById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -113,7 +113,7 @@ namespace WorkForceManagement.Services
                    ctx
                        .Employees
                        .SingleAsync(e => e.EmployeeId == id);
-                entity.IsActive = false;
+                entity.IsActive = !entity.IsActive;
                 return await ctx.SaveChangesAsync() == 1;
             }
         }
