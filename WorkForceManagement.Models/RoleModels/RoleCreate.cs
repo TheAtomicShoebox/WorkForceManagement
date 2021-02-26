@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WorkForceManagement.Models.RoleModels
 {
@@ -19,6 +14,6 @@ namespace WorkForceManagement.Models.RoleModels
         public double BaseRate { get; set; }
 
         [Required]
-        public bool isSupervisor { get; set; }
+        public bool IsSupervisor { get; set; }
     }
 }

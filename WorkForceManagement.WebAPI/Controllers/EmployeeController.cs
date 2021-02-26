@@ -17,7 +17,6 @@ namespace WorkForceManagement.WebAPI.Controllers
             return employeeService;
         }
 
-        // GET api/Employee
         [HttpGet]
         [Route("api/Employee/")]
         public async Task<IHttpActionResult> Get()
@@ -27,7 +26,6 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(employees);
         }
 
-        // GET by id api/Employee/:employeeId
         [HttpGet]
         [Route("api/Employee/{id}")]
         public async Task<IHttpActionResult> Get(int id)
@@ -37,7 +35,6 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(employee);
         }
 
-        // POST api/Employee
         [HttpPost]
         [Route("api/Employee/")]
         public async Task<IHttpActionResult> Post(EmployeeCreate model)
