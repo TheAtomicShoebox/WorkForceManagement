@@ -59,6 +59,7 @@
     <Compile Include="RoleModels\RoleCreate.cs" />
     <Compile Include="StoreEdit.cs" />
     <Compile Include="RoleModels\RoleDetail.cs" />
+    <Compile Include="RoleModels\RoleEdit.cs" />
     <Compile Include="RoleModels\RoleListItem.cs" />
     <Compile Include="StoreModels\StoreCreate.cs" />
     <Compile Include="StoreModels\StoreDetail.cs" />

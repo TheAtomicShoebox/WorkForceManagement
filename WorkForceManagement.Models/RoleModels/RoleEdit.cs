@@ -3,18 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WorkForceManagement.Models.RoleModels
 {
-    public class RoleCreate : IValidatableObject
+    public class RoleEdit : IValidatableObject
     {
-        [Required]
+        public int RoleId { get; set; }
         public string RoleName { get; set; }
-
-        [Required]
         public string RoleDescription { get; set; }
-
-        [Required]
         public double BaseRate { get; set; }
-
-        [Required]
         public bool IsSupervisor { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

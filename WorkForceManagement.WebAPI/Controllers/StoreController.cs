@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using WorkForceManagement.Models;
 using WorkForceManagement.Models.StoreModels;
@@ -16,6 +12,7 @@ namespace WorkForceManagement.WebAPI.Controllers
     {
        
         [HttpGet]
+        [Route("api/Store/")]
         public IHttpActionResult Get()
         {
             StoreService storeService = CreateStoreService();
@@ -24,6 +21,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/Store/")]
         public IHttpActionResult Post(StoreCreate store)
         {
             if (!ModelState.IsValid)
@@ -38,6 +36,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/Store/{number}")]
         public IHttpActionResult Get(int number)
         {
             StoreService storeService = CreateStoreService();
@@ -46,6 +45,7 @@ namespace WorkForceManagement.WebAPI.Controllers
         }
 
         [HttpPut]
+        [Route("api/Store/")]
         public IHttpActionResult Put(StoreEdit store)
         {
             if (!ModelState.IsValid)
