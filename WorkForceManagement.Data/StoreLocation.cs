@@ -12,6 +12,5 @@ namespace WorkForceManagement.Data
         [Required]
         public string StreetAddress { get; set; }
         public ICollection<Employee> Employees { get; set; }
-
     }
 }
