@@ -7,6 +7,7 @@ using WorkForceManagement.Services;
 
 namespace WorkForceManagement.WebAPI.Controllers
 {
+    [Authorize]
     public class EmployeeController : ApiController
     {
         private EmployeeService CreateEmployeeService()
@@ -16,7 +17,8 @@ namespace WorkForceManagement.WebAPI.Controllers
             return employeeService;
         }
 
-        // GET api/Employee
+        [HttpGet]
+        [Route("api/Employee/")]
         public async Task<IHttpActionResult> Get()
         {
             EmployeeService employeeService = CreateEmployeeService();
@@ -24,7 +26,8 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(employees);
         }
 
-        // GET by id api/Employee/:employeeId
+        [HttpGet]
+        [Route("api/Employee/{id}")]
         public async Task<IHttpActionResult> Get(int id)
         {
             EmployeeService employeeService = CreateEmployeeService();
@@ -32,7 +35,8 @@ namespace WorkForceManagement.WebAPI.Controllers
             return Ok(employee);
         }
 
-        // POST api/Employee
+        [HttpPost]
+        [Route("api/Employee/")]
         public async Task<IHttpActionResult> Post(EmployeeCreate model)
         {
             if (!ModelState.IsValid)
@@ -44,6 +48,33 @@ namespace WorkForceManagement.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok();
+        }
+
+        [Route("api/Employee/ChangeEmployeeStatus/{id}")]
+        [HttpPut]
+        public async Task<IHttpActionResult> ChangeEmployeeStatus(int id)
+        {
+            EmployeeService employeeService = CreateEmployeeService();
+
+            if (await employeeService.ChangeEmployeeStatusById(id))
+                return Ok();
+
+            return InternalServerError();
+        }
+
+        [HttpPut]
+        [Route("api/Employee")]
+        public async Task<IHttpActionResult> Update(EmployeeDetail model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            EmployeeService employeeService = CreateEmployeeService();
+
+            if (await employeeService.UpdateEmployee(model))
+                return Ok();
+
+            return InternalServerError();
         }
     }
 }
