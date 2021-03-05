@@ -108,3 +108,30 @@ This endpoint allows the user to update a single role (given the ID). Users can 
 **Delete A Role**
 DELETE http://website.com/api/Role/{id}/
 This endpoint prompts the user for a `RoleId` and removes the existing role from the database.
+
+## Credits
+---
+HTTP Request Methods
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+Git Conflict Resolution
+https://stackoverflow.com/questions/50012036/github-cant-rebase-my-feature-branch-this-branch-cannot-be-rebased-due-to-con
+
+Git Octopus Merge
+https://stackoverflow.com/questions/6520905/git-octopus-merge-order-of-multiple-branches
+https://stackoverflow.com/questions/5292184/merging-multiple-branches-with-git
+
+HTTP response status codes
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+EFA Zoom
+https://zoom.us/my/amandaknight?pwd=V2RqVVE0WEo4azVYYks0UVVuM1YxUT09
+
+Linq Async
+https://stackoverflow.com/questions/35011656/async-await-in-linq-select
+
+User.Identity Issue Resolution
+https://stackoverflow.com/questions/33951881/user-identity-getuserid-returns-null-after-successful-login
+
+EF Readonly
+https://stackoverflow.com/questions/10385248/ignoring-a-class-property-in-entity-framework-4-1-code-first
