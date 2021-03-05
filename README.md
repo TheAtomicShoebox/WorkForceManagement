@@ -23,24 +23,24 @@ The `RoleId` and `StoreLocationId` are associated with their Navigation Properti
 ### Employee Endpoints
 ---
 **GET All**
-**GET** http//website.com/api/Employee/
+**GET** `http://website.com/api/Employee/`
 This returns the list of all Employees
 
 **GET By Id**
-**GET** http://website.com/api/Employee/{id}/
+**GET** `http://website.com/api/Employee/{id}/`
 This returns the one employee whose `EmployeeId` matches `id`
 
 **Create New Employee**
-**POST** http://website.com/api/Employee/
+**POST** `http://website.com/api/Employee/`
 This allows the creation of a new Employee. The fields allowed are:
 `FirstName`, `LastName`, `RoleId`, `StoreLocationId`, `PayRate`, `IsActive`
 Of those, the name properties, `RoleId`, and `StoreLocationId` are required.
 
 **Change Employee Status**
-**PUT** http://website.com/api/Employee/ChangeEmployeeStatus/{id}
+**PUT** `http://website.com/api/Employee/ChangeEmployeeStatus/{id}`
 This allows for swapping the status of an employee (`IsActive`) to and from `true`.
 This only inverts the status, so use in conjunction with the GET by id method is important.
 
 **Update Employee**
-**PUT** http://website.com/api/Employee
+**PUT** `http://website.com/api/Employee`
 This allows for updating the several properties of an Employee. This is done by passing a model into the body of the request. Any combination of `EmployeeId`, `FirstName`, `LastName`, `RoleId`, `RoleName`, `StoreLocationId`, `StoreName`, and `PayRate` can be changed.
