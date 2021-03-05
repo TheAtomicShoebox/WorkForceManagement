@@ -76,3 +76,35 @@ Allows the user to update properties of a Store. This is done by passing the Sto
 PUT `http://website.com/api/Store/{storeNumber}/`
 Allows the user to delete a store where `StoreNumber` matches `storeNumber`
 
+## EmployeeRole
+
+int RoleId [PK] | string RoleName | string RoleDescription | double BaseRate | bool IsSupervisor | ICollection<Employee> Employees |
+--- | --- | --- | --- | --- | --- |
+0001 | Lead Shoe Shiner | Shine all the shoes. Wrangle other shoe shiners. | 57.23 | true | List of employees associated with RoleId 0001. |
+
+
+`RoleID` is the primary key and is not specified during role creation.
+
+Navigation property `Employees` navigates a one-to-many association between one `RoleId` and many `Employees`.
+
+### EmployeeRole Endpoints
+---
+**Create Role**
+POST http://website.com/api/Role/
+Creating an Employee Role prompts the user to input `RoleName`, `RoleDescription`, `BaseRate`, and `IsSupervisor` values. `RoleId` is the primary key and is automatically generated with each new role.
+
+**GET All Roles**
+GET http://website.com/api/Role/
+Returns a list of all roles that have been created. Roles are displayed using a concise `RoleID`/`RoleName` model.
+
+**GET Role By ID**
+GET http://website.com/api/Role/{id}/
+This endpoint returns a detailed model of a specific role (given the `RoleID`). `RoleId`, `RoleName`, `RoleDescription`, `BaseRate`, and `IsSupervisor` are displayed.
+
+**Update Role**
+PUT http://website.com/api/Role/{id}/
+This endpoint allows the user to update a single role (given the ID). Users can update `RoleName`, `RoleDescription`, `BaseRate`, and `IsSupervisor` status.
+
+**Delete A Role**
+DELETE http://website.com/api/Role/{id}/
+This endpoint prompts the user for a `RoleId` and removes the existing role from the database.
