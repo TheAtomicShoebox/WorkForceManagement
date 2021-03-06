@@ -2,6 +2,10 @@
 ---  
 An ASP.NET Web API intended to allow you to manage employees amongst multiple locations, tracking and modifying information about their role, their pay rate, their employment status, and of course, their name.  
 
+## How To Use
+To use WorkForceManagement, clone the repository, open it in Visual Studio, and run (IIS Express). This will pull up a web page that documents the various endpoints. Then, you can use that as a reference to base your own code off of, or you can use Swagger to create and manage your own database.
+Another possibility is to clone the repository and copy the files to your own project, but this will take extra work.
+
 ---
 ## Employee
 
