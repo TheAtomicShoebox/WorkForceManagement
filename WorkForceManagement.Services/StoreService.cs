@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WorkForceManagement.Data;
 using WorkForceManagement.Models;
 using WorkForceManagement.Models.StoreModels;
@@ -76,7 +77,7 @@ namespace WorkForceManagement.Services
             }
         }
 
-        public bool UpdateStore(StoreEdit model)
+        public async Task<bool> UpdateStore(StoreEdit model)
         {
             using(var ctx = new ApplicationDbContext())
             {
@@ -88,7 +89,7 @@ namespace WorkForceManagement.Services
                 entity.StoreName = model.StoreName;
                 entity.StreetAddress = model.StreetAddress;
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
          
