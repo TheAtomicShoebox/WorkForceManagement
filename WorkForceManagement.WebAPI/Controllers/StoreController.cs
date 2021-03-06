@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WorkForceManagement.Models;
 using WorkForceManagement.Models.StoreModels;
@@ -22,14 +23,14 @@ namespace WorkForceManagement.WebAPI.Controllers
 
         [HttpPost]
         [Route("api/Store/")]
-        public IHttpActionResult Post(StoreCreate store)
+        public IHttpActionResult Post(StoreCreate model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreateStoreService();
 
-            if (!service.CreateStore(store))
+            if (!service.CreateStore(model))
                 return InternalServerError();
 
             return Ok();
@@ -46,17 +47,17 @@ namespace WorkForceManagement.WebAPI.Controllers
 
         [HttpPut]
         [Route("api/Store/")]
-        public IHttpActionResult Put(StoreEdit store)
+        public async Task<IHttpActionResult> Put(StoreEdit model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreateStoreService();
 
-            if (!service.UpdateStore(store))
-                return InternalServerError();
+            if (await service.UpdateStore(model))
+                return Ok();
 
-            return Ok();
+            return InternalServerError();
         }
 
         [HttpDelete]
