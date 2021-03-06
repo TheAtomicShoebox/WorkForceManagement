@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorkForceManagement.Data;
 using WorkForceManagement.Models;
 using WorkForceManagement.Models.RoleModels;
@@ -25,7 +23,7 @@ namespace WorkForceManagement.Services
                 RoleName = model.RoleName,
                 RoleDescription = model.RoleDescription,
                 BaseRate = model.BaseRate,
-                IsSupervisor = model.isSupervisor
+                IsSupervisor = model.IsSupervisor
             };
 
             using (var ctx = new ApplicationDbContext())
